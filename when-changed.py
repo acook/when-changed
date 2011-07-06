@@ -68,7 +68,7 @@ if __name__ == '__main__':
                 t = os.stat(f).st_mtime
                 if t != mtimes[i]:
                     mtimes[i] = t
-                    os.system(command)
+                    os.system("bash -l -c %s" % (command))
                 
             except OSError as e:
                 print e.strerror
